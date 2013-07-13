@@ -14,9 +14,9 @@ Mac OSX support planned.
 
 # Usage
 
-Add this cookbook to your berksfile:
+Add this cookbook to your Berksfile:
 
-    cookbook 'base-box', github: 'prognostikos-cookbooks/base-box'
+    cookbook 'base-box', git: 'git@github.com:prognostikos/base-box.git'
 
 # Attributes
 
