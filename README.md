@@ -5,6 +5,8 @@ used in the provisioning step of building an AMI, Vagrant base box, or similar.
 
 See the attributes and recipes section below for more details on what can be
 installed.
+
+*NOTE:* This README is aspirational. This cookbook is still WIP.
   
 # Requirements
 
@@ -48,7 +50,7 @@ Add this cookbook to your Berksfile:
 - denyhosts
 - firewall/ufw/iptables
   - allow ssh & mosh, block everything else
-- sysctl settings from rubygems.org cookbook
+- sysctl settings tweaks
 
 ## `troubleshooting_tools` recipe
 - htop
@@ -63,10 +65,10 @@ Add this cookbook to your Berksfile:
 - tcpflow
 
 ## `development_tools` recipe
-- git (source)
+- git
 - hub
 - ctags
-- tig (source)
+- tig
 
 ## `mailer`
 - postfix
