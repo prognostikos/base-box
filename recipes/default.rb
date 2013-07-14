@@ -6,7 +6,10 @@
 # 
 
 include_recipe "apt"
+
 include_recipe "ntp"
+
+include_recipe "openssh"
 
 package_name = "tmux_1.8+fpm0_amd64.deb"
 cookbook_file "#{Chef::Config[:file_cache_path]}/#{package_name}"
@@ -25,5 +28,4 @@ include_recipe "base-box::troubleshooting-tools" if node[:base_box][:include_tro
 include_recipe "base-box::development-tools" if node[:base_box][:include_development_tools]
 
 include_recipe "base-box::mailer" if node[:base_box][:include_mailer]
-
 

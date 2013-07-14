@@ -36,3 +36,17 @@
   [ "$status" -eq 0 ]
 }
 
+@test "it turns off root login" {
+  run grep -i "PermitRootLogin No" /etc/ssh/sshd_config
+  [ "$status" -eq 0 ]
+}
+
+@test "it turns off password authentication" {
+  run grep -i "PasswordAuthentication No" /etc/ssh/sshd_config
+  [ "$status" -eq 0 ]
+}
+
+@test "it turns off DNS for sshd" {
+  run grep -i "UseDNS No" /etc/ssh/sshd_config
+  [ "$status" -eq 0 ]
+}
