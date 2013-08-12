@@ -1,40 +1,40 @@
 #!/usr/bin/env bats
 
-@test "it installs htop" {
+@test "htop is installed" {
   run which htop
   [ "$status" -eq 0 ]
 }
 
-@test "it installs iftop" {
+@test "iftop is installed" {
   run which iftop
   [ "$status" -eq 0 ]
 }
 
-@test "it installs lsof" {
+@test "lsof is installed" {
   run which lsof
   [ "$status" -eq 0 ]
 }
 
-@test "it installs ngrep" {
+@test "ngrep is installed" {
   run which ngrep
   [ "$status" -eq 0 ]
 }
 
-@test "it installs nmap" {
+@test "nmap is installed" {
   run which nmap
   [ "$status" -eq 0 ]
 }
 
-@test "it installs strace" {
+@test "strace is installed" {
   run which strace
   [ "$status" -eq 0 ]
 }
 
-@test "it installs sysstat" {
+@test "sysstat is installed" {
   [ -f /etc/sysstat/sysstat ]
 }
 
-@test "it installs tcpflow" {
+@test "tcpflow is installed" {
   run which tcpflow
   [ "$status" -eq 0 ]
 }
