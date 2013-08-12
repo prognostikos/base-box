@@ -11,6 +11,7 @@ include_recipe "ntp"
 
 include_recipe "openssh"
 
+package "libevent-2.0-5"
 package_name = "tmux_1.8+fpm0_amd64.deb"
 cookbook_file "#{Chef::Config[:file_cache_path]}/#{package_name}"
 dpkg_package "#{Chef::Config[:file_cache_path]}/#{package_name}"
