@@ -7,46 +7,37 @@
 }
 
 @test "vim is installed" {
-  run which vim
-  [ "$status" -eq 0 ]
+  which vim
 }
 
 @test "zsh is installed" {
-  run which zsh
-  [ "$status" -eq 0 ]
+  which zsh
 }
 
 @test "tree is installed" {
-  run which tree
-  [ "$status" -eq 0 ]
+  which tree
 }
 
 @test "curl is installed" {
-  run which curl
-  [ "$status" -eq 0 ]
+  which curl
 }
 
 @test "rsync is installed" {
-  run which rsync
-  [ "$status" -eq 0 ]
+  which rsync
 }
 
 @test "mosh is installed" {
-  run which mosh
-  [ "$status" -eq 0 ]
+  which mosh
 }
 
 @test "root login via ssh is disabled" {
-  run grep -i "PermitRootLogin No" /etc/ssh/sshd_config
-  [ "$status" -eq 0 ]
+  grep -i "PermitRootLogin No" /etc/ssh/sshd_config
 }
 
 @test "password authentication via ssh is disabled" {
-  run grep -i "PasswordAuthentication No" /etc/ssh/sshd_config
-  [ "$status" -eq 0 ]
+  grep -i "PasswordAuthentication No" /etc/ssh/sshd_config
 }
 
 @test "DNS lookups by sshd are disabled" {
-  run grep -i "UseDNS No" /etc/ssh/sshd_config
-  [ "$status" -eq 0 ]
+  grep -i "UseDNS No" /etc/ssh/sshd_config
 }
