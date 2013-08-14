@@ -74,9 +74,6 @@ Add this cookbook to your Berksfile:
 - postfix
 - postfix::aliases
 
-## `remove-build-tools` recipe
-- removes the build tools needed for installing the source recipes
-
 # Author
 
 Author:: Matt Rohrer (<matt@prognostikos.com>)
