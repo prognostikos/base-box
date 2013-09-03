@@ -17,7 +17,7 @@
 }
 
 @test "firewall allows ssh" {
-  sudo ufw status verbose | grep -E "22/tcp\s+ALLOW IN\s+Anywhere"
+  sudo ufw status verbose | grep -E "22\s+ALLOW IN\s+Anywhere"
 }
 
 @test "firewall allows mosh" {
