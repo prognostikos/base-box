@@ -9,7 +9,7 @@ version          '1.0.2'
 supports 'ubuntu'
 
 depends 'apt'
-depends 'denyhosts', '~> 1.3.0'
+depends 'denyhosts'
 depends 'git'
 depends 'hostname'
 depends 'hub'

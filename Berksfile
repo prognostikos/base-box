@@ -1,3 +1,5 @@
-cookbook 'denyhosts', github: 'phlipper/chef-denyhosts', tag: '1.3.0'
+site :opscode
 
 metadata
+
+cookbook 'denyhosts', github: 'phlipper/chef-denyhosts'
