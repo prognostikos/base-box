@@ -87,7 +87,7 @@ the `[:base_box][:include_*]` attributes if you need to.
 
 # Testing
 There is a test-kitchen/bats test file for each recipe. Make sure you have
-at least test-kitchen 1.0pre installed and run `kitchen test`.
+at least test-kitchen 1.0+ installed and run `kitchen test`.
 
 # Author
 
