@@ -7,3 +7,4 @@
 end
 
 include_recipe "hub"
+include_recipe "the_silver_searcher"

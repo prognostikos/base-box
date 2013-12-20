@@ -79,6 +79,7 @@ the `[:base_box][:include_*]` attributes if you need to.
 - hub
 - ctags
 - tig
+- the_silver_searcher (ag)
 
 ## mailer
 - postfix

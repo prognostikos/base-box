@@ -15,3 +15,7 @@
 @test "ctags is installed" {
   which ctags
 }
+
+@test "the_silver_searcher (ag) is installed" {
+  which ag
+}
