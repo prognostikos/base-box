@@ -11,14 +11,23 @@ include_recipe "ntp"
 
 include_recipe "openssh"
 
-package "libevent-2.0-5"
-package_name = "tmux_1.8+fpm0_amd64.deb"
-cookbook_file "#{Chef::Config[:file_cache_path]}/#{package_name}"
-dpkg_package "#{Chef::Config[:file_cache_path]}/#{package_name}"
-
-%w(zsh bash-completion vim-nox tree curl rsync).each do |p|
+%w(zsh bash-completion vim-nox tree curl rsync libevent-2.0-5).each do |p|
   package p
 end
+
+apt_repository "bn" do
+  uri 'http://bn-apt-repo.s3.amazonaws.com'
+  distribution node['lsb']['codename']
+  components ['main']
+  arch 'amd64'
+  trusted true # I trust it...do you?
+end
+
+execute 'update' do
+  command 'apt-get update'
+end
+
+package "tmux"
 
 include_recipe "mosh"
 

@@ -13,3 +13,7 @@ suites:
     run_list:
       - recipe[base-box::default]
     attributes:
+  - name: default
+    run_list:
+      - recipe[base-box::security-settings]
+    attributes:
