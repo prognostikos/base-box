@@ -6,14 +6,9 @@
 # 
 
 include_recipe "apt"
-
 include_recipe "ntp"
-
 include_recipe "openssh"
-
-%w(zsh bash-completion vim-nox tree curl rsync libevent-2.0-5).each do |p|
-  package p
-end
+include_recipe "mosh"
 
 apt_repository "bn" do
   uri 'http://bn-apt-repo.s3.amazonaws.com'
@@ -23,13 +18,17 @@ apt_repository "bn" do
   trusted true # I trust it...do you?
 end
 
-execute 'update' do
-  command 'apt-get update'
+apt_repository 'vim-snapshots' do
+  uri 'http://ppa.launchpad.net/nmi/vim-snapshots/ubuntu'
+  distribution node['lsb']['codename']
+  components   ['main']
+  keyserver    'keyserver.ubuntu.com'
+  key          '235BE609'
 end
 
-package "tmux"
-
-include_recipe "mosh"
+%w(tmux zsh bash-completion vim-nox tree curl rsync libevent-2.0-5).each do |p|
+  package p
+end
 
 include_recipe "base-box::security-settings" if node[:base_box][:include_security_settings]
 
